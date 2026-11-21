@@ -53,5 +53,8 @@ while attempts_remaining > 0 and "_" in display_word:
         attempts_remaining -= 1
         print(f"Sorry, '{guess}' is not in the word.")
 
-
+if "_" not in display_word:
+    print(f"\nCongrats! You won by guessing {secret_word}")
+else:
+    print(f"Game over! You ran out of attempts, the word was {secret_word}")
 
