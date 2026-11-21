@@ -40,4 +40,18 @@ while attempts_remaining > 0 and "_" in display_word:
     # Records the new letter guessed
     guessed_letters.append(guess)
 
-    
+    # Checks if the letter is in the secret word
+    if guess in secret_word:
+        print(f"Good job! '{guess}' is in the secret word!")
+
+        # Runs thru the secret word to reveal all the instances of the letter
+        for index in range(len(secret_word)):
+            if secret_word[index] == guess:
+                display_word[index] = guess
+    else:
+        # removes an attempt for an incorrect guess
+        attempts_remaining -= 1
+        print(f"Sorry, '{guess}' is not in the word.")
+
+
+
